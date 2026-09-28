@@ -1,0 +1,532 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>✨ Special Birthday Surprise ✨</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+                    LOGIN SCREEN
+====================================================== -->
+
+<div id="loginScreen" class="login-screen">
+
+    <div class="login-box">
+
+        <div class="lock">
+            🔐
+        </div>
+
+        <h1>
+            A Special Surprise
+        </h1>
+
+        <p class="sub">
+            Something beautiful is waiting for you...
+        </p>
+
+
+        <div class="input-box">
+
+            <span>👤</span>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter your name">
+
+        </div>
+
+
+        <div class="input-box">
+
+            <span>🔑</span>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password">
+
+        </div>
+
+
+        <button onclick="unlock()">
+            ✨ UNLOCK SURPRISE ✨
+        </button>
+
+
+        <p id="error"></p>
+
+
+        <div class="small-text">
+            💫 Only the special person can enter 💫
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+                    MAIN WEBSITE
+====================================================== -->
+
+<div id="mainPage" class="hidden">
+
+
+    <div class="background-stars"></div>
+
+
+    <!-- BALLOONS -->
+
+    <div class="balloon balloon1">
+        🎈
+    </div>
+
+    <div class="balloon balloon2">
+        🎈
+    </div>
+
+    <div class="balloon balloon3">
+        🎈
+    </div>
+
+    <div class="balloon balloon4">
+        🎈
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="top-heart">
+            💖
+        </div>
+
+        <h1>
+
+            Happy Birthday
+
+            <span id="personName">
+                Special Person
+            </span>
+
+            🎂
+
+        </h1>
+
+
+        <p>
+
+            Today isn't just another day...
+
+            <br>
+
+            It's the day someone wonderful
+            came into this world. ✨
+
+        </p>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="birthday-crown">
+            👑
+        </div>
+
+
+        <h2>
+            🎉 HAPPY BIRTHDAY! 🎉
+        </h2>
+
+
+        <div class="cake">
+            🎂
+        </div>
+
+
+        <p class="wish">
+
+            May your smile become brighter,
+            your dreams become bigger,
+            and your happiness become endless. 🌈✨
+
+        </p>
+
+
+        <div class="emoji-row">
+
+            🥳 🎈 🎁 💖 🌟 🦋 🌸 ✨
+
+        </div>
+
+    </section>
+
+
+    <!-- GIFT -->
+
+    <section class="gift-section">
+
+        <h2>
+            🎁 A Little Surprise For You
+        </h2>
+
+
+        <p>
+            Click the gift and discover your surprise!
+        </p>
+
+
+        <div
+            class="gift"
+            onclick="openGift()">
+
+            <div class="gift-lid">
+                🎀
+            </div>
+
+            <div class="gift-box">
+                🎁
+            </div>
+
+        </div>
+
+
+        <div
+            id="giftMessage"
+            class="gift-message hidden">
+
+
+            <div class="message-card">
+
+
+                <div class="sparkles">
+                    ✨ ✨ ✨
+                </div>
+
+
+                <h2>
+                    💌 A Message Just For You
+                </h2>
+
+
+                <p>
+
+                    You deserve all the happiness
+                    in the world.
+
+                    Keep smiling,
+                    keep dreaming,
+                    and keep being the amazing
+                    person you are. 💖
+
+                </p>
+
+
+                <p>
+
+                    May every new day bring you
+                    something beautiful
+                    and unexpected. 🌸
+
+                </p>
+
+
+                <div class="big-emoji">
+
+                    🥳🎂🎉💖✨🎁🌟
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO -->
+
+    <section class="photo-section">
+
+
+        <h2>
+            📸 A Beautiful Memory
+        </h2>
+
+
+        <div class="photo-card">
+
+
+            <div class="photo-placeholder">
+
+                📷
+
+                <span>
+                    Add Your Photo
+                </span>
+
+            </div>
+
+
+            <p>
+
+                One picture can hold
+                a thousand memories... 💫
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- WISHES -->
+
+    <section class="wishes">
+
+
+        <h2>
+            🌟 Special Wishes For You
+        </h2>
+
+
+        <div class="wish-container">
+
+
+            <div class="wish-card">
+
+                🌈
+
+                <h3>
+                    Dream Big
+                </h3>
+
+                <p>
+
+                    May every dream you have
+                    slowly turn into a beautiful
+                    reality.
+
+                </p>
+
+            </div>
+
+
+            <div class="wish-card">
+
+                🦋
+
+                <h3>
+                    Stay Happy
+                </h3>
+
+                <p>
+
+                    May your life always be filled
+                    with laughter, peace and
+                    beautiful moments.
+
+                </p>
+
+            </div>
+
+
+            <div class="wish-card">
+
+                🌸
+
+                <h3>
+                    Keep Smiling
+                </h3>
+
+                <p>
+
+                    Never lose that beautiful smile
+                    that makes ordinary moments
+                    special.
+
+                </p>
+
+            </div>
+
+
+            <div class="wish-card">
+
+                ⭐
+
+                <h3>
+                    Shine Bright
+                </h3>
+
+                <p>
+
+                    Continue being yourself
+                    and let your light shine
+                    wherever you go.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- SECRET -->
+
+    <section class="secret-section">
+
+
+        <h2>
+            🔒 One Last Secret
+        </h2>
+
+
+        <button
+            class="secret-button"
+            onclick="showSecret()">
+
+            💌 Open Secret Message
+
+        </button>
+
+
+        <div
+            id="secretMessage"
+            class="secret-message hidden">
+
+
+            <p>
+
+                "Some people make the world
+                brighter simply by being in it." ✨
+
+            </p>
+
+
+            <p>
+
+                And today,
+                we're celebrating YOU. 💖
+
+            </p>
+
+
+            <div>
+
+                🌟 🥳 🎂 🎁 💕 🌸 ✨
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- MUSIC -->
+
+    <section class="music-section">
+
+
+        <h2>
+            🎵 Birthday Vibes
+        </h2>
+
+
+        <button
+            onclick="toggleMusic()"
+            id="musicButton">
+
+            ▶️ Play Birthday Music
+
+        </button>
+
+
+        <audio
+            id="birthdayMusic"
+            loop>
+
+            <source
+                src="birthday.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+
+        <p>
+
+            Optional:
+            Put <b>birthday.mp3</b>
+            in the same folder to add music.
+
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+
+        <div class="footer-emojis">
+
+            💖 ✨ 🎂 🥳 🎁
+            🌈 🌸 🎈 ⭐
+
+        </div>
+
+
+        <p>
+
+            Made with ❤️ specially for
+
+            <span id="footerName">
+                you
+            </span>
+
+        </p>
+
+
+        <p>
+
+            © 2026 • Your Special Birthday Surprise
+
+        </p>
+
+
+    </footer>
+
+</div>
+
+
+<!-- CONFETTI -->
+
+<div id="confettiContainer"></div>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
+```
