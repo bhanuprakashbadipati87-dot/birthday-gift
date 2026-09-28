@@ -1,0 +1,928 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #06000f;
+    color: white;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================= LOGIN SCREEN ================= */
+
+.login-screen {
+    position: fixed;
+    inset: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 20% 20%, #451a68, transparent 35%),
+        radial-gradient(circle at 80% 80%, #142b65, transparent 35%),
+        #05000d;
+
+    z-index: 9999;
+}
+
+.login-box {
+    width: 420px;
+    max-width: 90%;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 0 40px rgba(200,100,255,0.3),
+        inset 0 0 30px rgba(255,255,255,0.04);
+
+    backdrop-filter: blur(15px);
+
+    animation: loginAppear 1.2s ease;
+}
+
+.lock {
+    font-size: 65px;
+    animation: floating 2s infinite ease-in-out;
+}
+
+.login-box h1 {
+    margin: 15px 0;
+
+    font-size: 32px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff65d8,
+            #9d8cff,
+            #6be7ff
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.sub {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 15px 0;
+
+    padding: 14px 18px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.1);
+}
+
+.input-box span {
+    font-size: 20px;
+}
+
+.input-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+.input-box input::placeholder {
+    color: #bbb;
+}
+
+.login-box button {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3cac,
+            #784ba0,
+            #2b86c5
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.login-box button:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px #ff54c8;
+}
+
+#error {
+    color: #ff7474;
+    margin-top: 15px;
+}
+
+.small-text {
+    margin-top: 20px;
+
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+
+/* ================= MAIN PAGE ================= */
+
+#mainPage {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 10% 10%, #35135a, transparent 30%),
+        radial-gradient(circle at 90% 20%, #14265d, transparent 30%),
+        radial-gradient(circle at 50% 90%, #541447, transparent 35%),
+        #06000f;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.background-stars {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px);
+
+    background-size: 70px 70px;
+
+    opacity: .2;
+
+    animation:
+        starsMove 15s linear infinite;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    text-align: center;
+
+    padding:
+        100px
+        20px
+        60px;
+
+    position: relative;
+}
+
+.top-heart {
+    font-size: 55px;
+
+    animation:
+        heartBeat 1.2s infinite;
+}
+
+header h1 {
+    font-size:
+        clamp(35px, 7vw, 70px);
+
+    margin: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff75d1,
+            #fff,
+            #75d8ff
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+header p {
+    color: #ddd;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    text-align: center;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 50px 20px;
+}
+
+.birthday-crown {
+    font-size: 60px;
+
+    animation:
+        floating 2s infinite ease-in-out;
+}
+
+.hero h2 {
+    font-size: 45px;
+
+    margin: 20px;
+}
+
+.cake {
+    font-size: 100px;
+
+    animation:
+        cakeBounce 2s infinite;
+}
+
+.wish {
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #ddd;
+}
+
+.emoji-row {
+    font-size: 30px;
+
+    margin-top: 20px;
+
+    animation:
+        floating 3s infinite ease-in-out;
+}
+
+
+/* ================= GIFT ================= */
+
+.gift-section {
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.gift-section h2,
+.wishes h2,
+.photo-section h2,
+.secret-section h2,
+.music-section h2 {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.gift-section > p {
+    color: #ccc;
+
+    margin-bottom: 30px;
+}
+
+.gift {
+    width: 180px;
+    height: 180px;
+
+    margin: 30px auto;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: .4s;
+}
+
+.gift:hover {
+    transform:
+        scale(1.12)
+        rotate(-3deg);
+}
+
+.gift-box {
+    font-size: 150px;
+
+    animation:
+        giftShake 2s infinite;
+}
+
+.gift-lid {
+    position: absolute;
+
+    z-index: 2;
+
+    top: -15px;
+
+    left: 55px;
+
+    font-size: 55px;
+
+    animation:
+        bowMove 1s infinite;
+}
+
+.message-card {
+    max-width: 650px;
+
+    margin: 40px auto;
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 40px
+        rgba(255,60,200,.25);
+
+    animation:
+        messageAppear .8s ease;
+}
+
+.message-card h2 {
+    margin-bottom: 20px;
+}
+
+.message-card p {
+    line-height: 1.8;
+
+    color: #ddd;
+
+    font-size: 18px;
+
+    margin: 15px 0;
+}
+
+.sparkles {
+    font-size: 25px;
+}
+
+.big-emoji {
+    font-size: 35px;
+
+    margin-top: 25px;
+}
+
+
+/* ================= PHOTO ================= */
+
+.photo-section {
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.photo-card {
+    max-width: 450px;
+
+    margin: 30px auto;
+}
+
+.photo-placeholder {
+    height: 300px;
+
+    border-radius: 25px;
+
+    border:
+        2px dashed
+        rgba(255,255,255,.4);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 80px;
+
+    background:
+        rgba(255,255,255,.05);
+}
+
+.photo-placeholder span {
+    font-size: 18px;
+
+    color: #aaa;
+}
+
+.photo-card p {
+    margin-top: 20px;
+
+    color: #ccc;
+}
+
+
+/* ================= WISH CARDS ================= */
+
+.wishes {
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.wish-container {
+    max-width: 1000px;
+
+    margin: 35px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 20px;
+}
+
+.wish-card {
+    padding: 30px 20px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    font-size: 45px;
+
+    transition: .4s;
+}
+
+.wish-card:hover {
+    transform:
+        translateY(-10px);
+
+    background:
+        rgba(255,255,255,.13);
+
+    box-shadow:
+        0 10px 40px
+        rgba(255,70,200,.2);
+}
+
+.wish-card h3 {
+    font-size: 20px;
+
+    margin: 15px 0;
+}
+
+.wish-card p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #ccc;
+}
+
+
+/* ================= SECRET ================= */
+
+.secret-section {
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.secret-button,
+.music-section button {
+    padding:
+        15px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4ecd,
+            #7d5cff
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.secret-button:hover,
+.music-section button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,80,210,.5);
+}
+
+.secret-message {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    animation:
+        messageAppear .8s ease;
+}
+
+.secret-message p {
+    font-size: 20px;
+
+    margin: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= MUSIC ================= */
+
+.music-section {
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.music-section p {
+    margin-top: 15px;
+
+    color: #aaa;
+}
+
+
+/* ================= BALLOONS ================= */
+
+.balloon {
+    position: fixed;
+
+    font-size: 55px;
+
+    z-index: 3;
+
+    animation:
+        balloonFloat 8s infinite
+        ease-in-out;
+
+    pointer-events: none;
+}
+
+.balloon1 {
+    left: 5%;
+    top: 30%;
+}
+
+.balloon2 {
+    right: 5%;
+    top: 45%;
+
+    animation-delay:
+        2s;
+}
+
+.balloon3 {
+    left: 15%;
+    bottom: 15%;
+
+    animation-delay:
+        4s;
+}
+
+.balloon4 {
+    right: 15%;
+    bottom: 20%;
+
+    animation-delay:
+        1s;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    color: #aaa;
+}
+
+.footer-emojis {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+
+/* ================= CONFETTI ================= */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    z-index: 10000;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall
+        4s
+        linear
+        forwards;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes loginAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px);
+    }
+}
+
+@keyframes heartBeat {
+
+    0%,100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.3);
+    }
+}
+
+@keyframes cakeBounce {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px);
+    }
+}
+
+@keyframes giftShake {
+
+    0%,100% {
+        transform:
+            rotate(0);
+    }
+
+    10% {
+        transform:
+            rotate(-5deg);
+    }
+
+    20% {
+        transform:
+            rotate(5deg);
+    }
+
+    30% {
+        transform:
+            rotate(-5deg);
+    }
+
+    40% {
+        transform:
+            rotate(0);
+    }
+}
+
+@keyframes bowMove {
+
+    0%,100% {
+        transform:
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            rotate(5deg);
+    }
+}
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.5)
+            translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+@keyframes balloonFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-60px)
+            rotate(5deg);
+    }
+}
+
+@keyframes confettiFall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes starsMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(70px);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px) {
+
+    .wish-container {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    .balloon {
+        font-size: 40px;
+    }
+}
+
+@media(max-width:500px) {
+
+    .login-box {
+        padding:
+            35px 20px;
+    }
+
+    header {
+        padding-top:
+            70px;
+    }
+
+    .wish-container {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .cake {
+        font-size: 75px;
+    }
+
+    .gift {
+        transform:
+            scale(.85);
+    }
+
+    .message-card {
+        padding:
+            25px 18px;
+    }
+}
